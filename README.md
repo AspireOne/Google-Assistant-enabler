@@ -20,3 +20,6 @@ In order to make this work, this module
 - **adds a folder with Google Assistant 2.0 resources** (at */data/data/com.google.android.googlequicksearchbox.nga_resources*) installed as an app
 - **replaces GSA prefs file** located at */data/data/com.google.android.googlequicksearchbox/shared_prefs/GEL.GSAPrefs.xml* with Google Assistant 2.0 specific one (and backs the current one up)
 - **Changes the already mentioned shared_prefs folder's permissions** from 771 to 551, restricting write access
+
+# License
+[GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.en.html)
