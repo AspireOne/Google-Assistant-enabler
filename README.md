@@ -1,4 +1,4 @@
-![](https://i.ibb.co/Gt1mNLR/Main-img.png)
+![](https://i.imgur.com/QJkngBt.png)
 
 # Premise
 Although this module's functionality is not guaranteed, it should enable Google Assistant 2.0 on most Android 10 roms using Pixel UI.
