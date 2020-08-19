@@ -16,8 +16,8 @@
 # Installation
 ### Prerequirements
 - A phone running **Android 10**
-- **Root with** [**Magisk**](https://magiskmanager.com/)
 - At least **140mb of storage**.
+- **Root with** [**Magisk**](https://magiskmanager.com/)
 
 ### Process
 - **Flash this via** [**Magisk Manager**](https://magiskmanager.com/), as you would flash any other module
