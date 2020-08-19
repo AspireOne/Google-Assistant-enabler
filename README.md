@@ -9,9 +9,13 @@ Although this module's functionality is not guaranteed, it should enable Google 
 ### Prerequirements
 - A phone running **Android 10**
 - **Root with** [**Magisk**](https://magiskmanager.com/)
+- At least **140mb of storage**.
+
 ### Process
 - **Flash this via** [**Magisk Manager**](https://magiskmanager.com/), as you would flash any other module
 - If you haven't already done so, **change the Language in the Google app to "English (US)"**
+
+Note that the installer will download a file with a size of ~140mb.
 
 ---
 
