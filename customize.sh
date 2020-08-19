@@ -16,6 +16,12 @@ check_android_version() {
   fi
 }
 
+check_cpu_arch() {
+  if [ $ARCH -eq "arm" ]; then
+    print_progress "There's a high chance of this module not working on your cpu architecture."
+  fi
+}
+
 backup_files() {
   print_progress "backing up GSA prefs"
   mkdir $BACKUP_DIR
@@ -55,6 +61,7 @@ finish_installation() {
 
 
 check_android_version
+check_cpu_arch
 set_sharedPrefs_perms
 backup_files
 replace_GSAprefs
