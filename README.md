@@ -40,7 +40,7 @@ In order to make this work, this module
 - **replaces GSA prefs file** located at */data/data/com.google.android.googlequicksearchbox/shared_prefs/GEL.GSAPrefs.xml* with Google Assistant 2.0 specific one (and backs the current one up)
 - **Changes the already mentioned shared_prefs folder's permissions** from 771 to 551
 
-Backed up files are stored in {the module's root folder (currently /data/adb/modules/g-assistant-2.0-enabler}/backup
+Backed up files are stored in {the module's root folder (currently /data/adb/modules/g-assistant-2.0-enabler)}/backup
 
 ---
 
