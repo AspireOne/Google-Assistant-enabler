@@ -49,7 +49,7 @@ set_sharedPrefs_perms() {
 
 finish_installation() {
   print_progress "cleaning up"
-  rm -rf "$RESOURCES_DIR" || "Could not delete leftover files"
+  rm -rf "$RESOURCES_DIR" || print_progress "Could not delete leftover files"
   print_progress "Installation succesful. Set the language in the Google app to English (US)"
 }
 
