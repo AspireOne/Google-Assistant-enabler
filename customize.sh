@@ -1,6 +1,7 @@
 # set global variables
 RESOURCES_DOWNLOAD_LINK="https://download1583.mediafire.com/ar09udj1odhg/4axh1n7teuwvqn0/NgaResources.apk"
-SHARED_PREFS_DIR="/data/data/com.google.android.googlequicksearchbox/shared_prefs"
+GOOGLE_APP_DIR="/data/data/com.google.android.googlequicksearchbox"
+SHARED_PREFS_DIR="$GOOGLE_APP_DIR/shared_prefs"
 RESOURCES_DIR="$MODPATH/resources"
 BACKUP_DIR="$MODPATH/backup";
 
@@ -18,7 +19,7 @@ check_android_version() {
 
 check_cpu_arch() {
   if [ $ARCH -eq "arm" ]; then
-    print_progress "There's a high chance of this module not working on your cpu architecture."
+    print_progress "There's a high chance of this module not working on your cpu architecture"
   fi
 }
 
@@ -56,6 +57,7 @@ set_sharedPrefs_perms() {
 finish_installation() {
   print_progress "cleaning up"
   rm -rf "$RESOURCES_DIR" || print_progress "Could not delete leftover files"
+  rm -rf "$GOOGLE_APP_DIR/cache/*" || print_progress "Could not clear Google app's cache"
   print_progress "Installation succesful. Set the language in the Google app to English (US)"
 }
 
