@@ -1,7 +1,7 @@
 id=g-assistant-2.0-enabler
 name=Google Assistant 2.0 enabler
-version=v1.1
+version=v1.2
 # must be an int
-versionCode=11
+versionCode=12
 author=Aspire0ne
 description=Enables Google Assistant 2.0 with it's glowing UI
