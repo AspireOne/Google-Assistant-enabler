@@ -1,5 +1,6 @@
 # set global variables
 # QSB stands for Quick Search Box
+MODPATH=${0%/*}
 QSB_DIR_NAME="com.google.android.googlequicksearchbox"
 SHARED_PREFS_DIR="/data/data/$QSB_DIR_NAME/shared_prefs"
 
