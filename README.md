@@ -8,7 +8,7 @@
 
 # Possible issues
 - Spoofing device as Pixel 4 XL caused some side effect on some phones, like not working IR blaster or FM radio.
-- Changing GSAPrefs causes Google app force closes on some devices.
+- Changing GSAPrefs causes force closes when trying to search through google search bar on some devices.
 - Seems to not work on devices with Arm CPU architecture.
 
 ---
