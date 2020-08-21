@@ -3,12 +3,12 @@
 # Premise
 - Although this module's functionality is not guaranteed, it should enable Google Assistant 2.0 with it's glowing UI on a lot of Android 10 roms using Pixel UI.
 - "Hey Google" hotword doesn't work.
+- Google crashes when trying to search through it's search bar.
 
 ---
 
 # Possible issues
 - Spoofing device as Pixel 4 XL caused some side effect on some phones, like not working IR blaster or FM radio.
-- Changing GSAPrefs causes force closes when trying to search through google search bar on some devices.
 - Seems to not work on devices with Arm CPU architecture.
 
 ---
