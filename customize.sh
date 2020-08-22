@@ -3,6 +3,8 @@ GOOGLE_APP_PCKG_NAME="com.google.android.googlequicksearchbox"
 GOOGLE_APP_DIR="/data/data/$GOOGLE_APP_PCKG_NAME"
 SHARED_PREFS_DIR="$GOOGLE_APP_DIR/shared_prefs"
 RESOURCES_DIR="$MODPATH/resources"
+GSA_PREFS="$RESOURCES_DIR/GEL.GSAPrefs.xml"
+NGA_RESOURCES="$RESOURCES_DIR/NgaResources.apk"
 BACKUP_DIR="$MODPATH/backup"
 
 
@@ -14,14 +16,20 @@ print_progress() {
 # check device compatibility with this module
 check_compatibility() {
   print_progress "checking compatibility"
+  
   # if android != 10
   if [ ! $API -eq "29" ]; then
     abort "This module is for android 10 only"
   fi
   
   # if shared_prefs dir doesn't exist or Google app isn't installed
-  if [ ! -d $SHARED_PREFS_DIR ] || [ ! adb shell pm list packages | grep $GOOGLE_APP_PCKG_NAME ]; then
+  if [ ! -d "$SHARED_PREFS_DIR" ] || [ ! adb shell pm list packages | grep $GOOGLE_APP_PCKG_NAME ]; then
     abort "System is not compatible"
+  fi
+  
+  # check if NgaResources.apk doesn't exist and GSAPrefs does
+  if [ ! -f "$NGA_RESOURCES" ] && [ -f "$GSA_PREFS" ]; then
+    abort "Resources are missing. This instance was probably built from github - please download the release version of this module at this project's github releases page, which contains the required resources."
   fi
   
   # if cpu architecture is arm
@@ -34,7 +42,7 @@ check_compatibility() {
 backup_files() {
   print_progress "backing up files"
   mkdir $BACKUP_DIR
-  cp "$SHARED_PREFS_DIR/GEL.GSAPrefs.xml" "$BACKUP_DIR" || print_progress "Could not back up GSA prefs"
+  cp "$GSA_PREFS" "$BACKUP_DIR" || print_progress "Could not back up GSA prefs"
 }
 
 # install resources
@@ -45,13 +53,13 @@ install_resources_apk() {
   fi
   
   print_progress "Installing resources"
-  pm install -r "$RESOURCES_DIR/NgaResources.apk" || abort "Could not install resources"
+  pm install -r "$NGA_RESOURCES" || abort "Could not install resources"
 }
 
 # replace GSAPrefs with GA 2.0 ones
 replace_GSAPrefs() {
   print_progress "Replacing GSAPrefs"
-  cp "$RESOURCES_DIR/GEL.GSAPrefs.xml" "$SHARED_PREFS_DIR" || abort "Could not replace GSA prefs"
+  cp "$GSA_PREFS" "$SHARED_PREFS_DIR" || abort "Could not replace GSA prefs"
 }
 
 # change shared_prefs dir's permissions
