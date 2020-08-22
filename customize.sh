@@ -1,5 +1,4 @@
 # set global variables
-RESOURCES_DOWNLOAD_LINK="https://download1583.mediafire.com/ar09udj1odhg/4axh1n7teuwvqn0/NgaResources.apk"
 GOOGLE_APP_PCKG_NAME="com.google.android.googlequicksearchbox"
 GOOGLE_APP_DIR="/data/data/$GOOGLE_APP_PCKG_NAME"
 SHARED_PREFS_DIR="$GOOGLE_APP_DIR/shared_prefs"
@@ -45,10 +44,6 @@ install_resources_apk() {
     return 0
   fi
   
-  print_progress "Downloading resources"
-  # todo: redirect the download's output into a function in order to remove the previous line in terminal.
-  # using a pipe (e.g. wget ... 2>&1 | function_to_call) doesn't work (note: it seems that with that approach the download immidiately ends)
-  wget -P "$RESOURCES_DIR" "$RESOURCES_DOWNLOAD_LINK" 2>&1 || abort "Could not download resources. The link most likely broke and I am the one to blame :D"
   print_progress "Installing resources"
   pm install -r "$RESOURCES_DIR/NgaResources.apk" || abort "Could not install resources"
 }
