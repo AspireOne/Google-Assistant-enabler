@@ -1,7 +1,7 @@
 id=g-assistant-2.0-enabler
 name=Google Assistant 2.0 enabler
-version=v1.3
+version=v1.4
 # must be an int
-versionCode=13
+versionCode=14
 author=Aspire0ne
-description=Enables Google Assistant 2.0 with it's glowing UI
+description=Enables Google Assistant 2.0 with it's glowing UI - for Android 10 devices
