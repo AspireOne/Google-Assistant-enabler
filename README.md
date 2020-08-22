@@ -16,15 +16,12 @@
 # Installation
 ### Prerequirements
 - A phone running **Android 10**
-- At least **140mb of storage**.
 - **Root with** [**Magisk**](https://magiskmanager.com/)
 
 ### Process
 - **Flash this via** [**Magisk Manager**](https://magiskmanager.com/), as you would flash any other module
 - If you haven't already done so, **change the Language in the Google app to "English (US)"**
 - (Optional) continued conversation is off by default. You must enable it in Google app -> Settings -> Google Assistant -> "Assistant" tab -> Continued conversation
-
-Note that the installer will download a file with a size of ~140mb.
 
 ---
 
